@@ -1,0 +1,2 @@
+-- melihat 3 product yang sering dibeli oleh pelanggan
+SELECT product.name, COUNT(detail_order.product_id * detail_order.count) AS total_pembelian FROM detail_order INNER JOIN product ON detail_order.product_id = product.id GROUP BY product.name ORDER BY total_pembelian DESC LIMIT 3

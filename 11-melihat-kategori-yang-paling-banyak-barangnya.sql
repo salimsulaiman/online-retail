@@ -1,0 +1,2 @@
+-- melihat category yang paling banyak barangnya
+SELECT category.name, COUNT(product.name) AS total_barang FROM category INNER JOIN product ON product.category_id = category.id GROUP BY category.name ORDER BY total_barang DESC LIMIT 1;

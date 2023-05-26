@@ -1,0 +1,2 @@
+-- Melihat nominal rata-rata transaksi yang dilakukan oleh user dalam 1 bulan terakhir
+SELECT user.name, AVG(detail_order.total_price) AS avarage_transaction FROM user INNER JOIN  detail_order ON detail_order.user_id = user.id INNER JOIN transaction ON transaction.detailOrder_id = detail_order.id WHERE transaction.order_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND user.id = 6
